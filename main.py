@@ -43,13 +43,22 @@ def sprawdz_poprawnosc(zakodowana_wiadomosc):
     return odkodowana
 
 
-def wprowadz_blad(zakodowane):
-    indeks_slowa = random.randint(0, len(zakodowane) - 1)
-    indeks_bitu = random.randint(0, len(zakodowane[indeks_slowa]) - 1)
+def wprowadz_blad(zakodowane, liczba_bledow=1):
+    zmienione_pozycje = []
 
-    zakodowane[indeks_slowa][indeks_bitu] = 1 - zakodowane[indeks_slowa][indeks_bitu]
+    for i in range(liczba_bledow):
+        while True:
+            indeks_slowa = random.randint(0, len(zakodowane) - 1)
+            indeks_bitu = random.randint(0, len(zakodowane[indeks_slowa]) - 1)
 
-    print(f"\nWprowadzono błąd w pozycji: słowo {indeks_slowa}, bit {indeks_bitu}")
+            if (indeks_slowa, indeks_bitu) not in zmienione_pozycje:
+                break
+
+        zakodowane[indeks_slowa][indeks_bitu] = 1 - zakodowane[indeks_slowa][indeks_bitu]
+        zmienione_pozycje.append((indeks_slowa, indeks_bitu))
+
+        print(f"\nWprowadzono błąd {i + 1} w pozycji: słowo {indeks_slowa}, bit {indeks_bitu}")
+
     return zakodowane
 
 def main():
@@ -66,8 +75,7 @@ def main():
     print("\nZakodowane dane (z bitami parzystości):")
     print(zakodowane)
 
-    zakodowane = wprowadz_blad(zakodowane)
-    zakodowane = wprowadz_blad(zakodowane)
+    zakodowane = wprowadz_blad(zakodowane, 2)
 
     poprawnosc = sprawdz_poprawnosc(zakodowane)
     print("\nDane po naprawie:")
