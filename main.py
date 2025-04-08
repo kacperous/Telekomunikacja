@@ -67,6 +67,7 @@ def main():
     print(zakodowane)
 
     zakodowane = wprowadz_blad(zakodowane)
+    zakodowane = wprowadz_blad(zakodowane)
 
     poprawnosc = sprawdz_poprawnosc(zakodowane)
     print("\nDane po naprawie:")
