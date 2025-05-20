@@ -1,0 +1,10 @@
+1	8	8000	test_8000Hz_8bit.wav	Bardzo niska, "telefoniczna"
+2	16	8000	test_8000Hz_16bit.wav	Niska, ale lepsza niż 8-bit przy tej Fs
+3	32	8000	test_8000Hz_32bit.wav	Niska, podobna do 16-bit przy tej Fs
+4	8	22050	test_22050Hz_8bit.wav	Akceptowalna dla mowy, słaba dla muzyki
+5	16	22050	test_22050Hz_16bit.wav	Dobra dla mowy, akceptowalna dla muzyki (niższa jakość)
+6	8	44100	test_44100Hz_8bit.wav	Słaba z powodu głębi bitowej, mimo wysokiej Fs
+7	16	44100	test_44100Hz_16bit_REF.wav	Bardzo dobra, jakość CD Audio (potencjalny REF)
+8	32	44100	test_44100Hz_32bit.wav	Bardzo dobra, teoretycznie lepsza dynamika niż 16-bit
+9	16	48000	test_48000Hz_16bit_REF.wav	Bardzo dobra, standard dla wideo (potencjalny REF)
+10	32	48000	test_48000Hz_32bit_REF.wav	Doskonała, jakość studyjna (potencjalny REF)
